@@ -25,9 +25,35 @@
     </form>
 
     <hr />
+    </div>
 
-    @{
-        //TODO #4: Loop over the search results to display all job fields.
-    }
+    @{ 
+//TODO #4: Loop over the search results to display all job fields.
+        <div>
+
+        <table table-striped class="body-content" border="0" align="center">
+            @if (ViewBag.jobs != null)
+            {
+                @foreach (var job in ViewBag.jobs)
+                {
+                <tr>
+                    <td>
+                        <ul>
+                            <li>ID:@job.Id</li>
+                            <li>Name:@job.Name</li>
+                            <li>Employer:@job.Employer</li>
+                            <li>Location:@job.Location</li>
+                            <li>Position:@job.PositionType</li>
+                            <li>Skill:@job.CoreCompetency</li>
+                        </ul>
+                    </td>
+                </tr>
+
+            }
+            }
+        </table>
+        <br />
+    
 
 </div>
+        }
