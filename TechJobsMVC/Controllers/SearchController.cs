@@ -17,6 +17,7 @@ namespace TechJobsMVC.Controllers
         {
             ViewBag.title = "Search Jobs";
             ViewBag.columns = ListController.ColumnChoices;
+            ViewBag.selectedFilter = "all";
             return View();
         }
 
@@ -37,6 +38,7 @@ namespace TechJobsMVC.Controllers
             }
             ViewBag.jobs = jobs;
             ViewBag.columns = ListController.ColumnChoices;
+            ViewBag.selectedFilter = searchType;
 
             return View("Index");
         }

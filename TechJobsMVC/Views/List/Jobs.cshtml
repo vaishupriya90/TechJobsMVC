@@ -4,26 +4,48 @@
 
     @{
         //TODO #1: Use a loop to display job results in a table.
-        <table table-striped class="body-content" border="0" align="center">
 
-            @foreach (var job in ViewBag.jobs)
-            {
+        @foreach (var job in ViewBag.jobs)
+        {
+            <table table-striped class="body-content" border="0" align="center" width="50%">
+
                 <tr>
-                    <td>
-                        <ul>
-                            <li>ID:@job.Id</li>
-                            <li>Name:@job.Name</li>
-                            <li>Employer:@job.Employer</li>
-                            <li>Location:@job.Location</li>
-                            <li>Position:@job.PositionType</li>
-                            <li>Skill:@job.CoreCompetency</li>
-                        </ul>
-                    </td>
+
+
+                    <td>ID :</td>
+                    <td>@job.Id</td>
+                </tr>
+                <tr>
+                    <td>Name :</td>
+                    <td>@job.Name</td>
+                </tr>
+                <tr>
+                    <td>Employer :</td>
+                    <td><a asp-controller="List" asp-action="Jobs" asp-route-column="employer" asp-route-value="@job.Employer">@job.Employer</a></td>
+                </tr>
+                <tr>
+                    <td>Location :</td>
+                    <td><a asp-controller="List" asp-action="Jobs" asp-route-column="location" asp-route-value="@job.Location">@job.Location</a></td>
+                </tr>
+                <tr>
+                    <td>Position :</td>
+                    <td><a asp-controller="List" asp-action="Jobs" asp-route-column="positionType" asp-route-value="@job.PositionType">@job.PositionType</a></td>
+                </tr>
+                <tr>
+                    <td>Skill :</td>
+                    <td><a asp-controller="List" asp-action="Jobs" asp-route-column="coreCompetency" asp-route-value="@job.CoreCompetency">@job.CoreCompetency</a></td>
+
+
                 </tr>
 
-            }
-        </table>
+
+            </table>
+
+
+        }
         <br />
+
+
 
 
     }
